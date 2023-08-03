@@ -4,8 +4,7 @@ pipeline{
         stage('TF Init'){
             steps{
                 sh '''
-                git clone 
-                cd /data/projects/terraform/libvirt
+                cd terraform-file/
                 terraform init
                 '''
             }
@@ -13,7 +12,7 @@ pipeline{
         stage('TF Plan'){
             steps{
                 sh '''
-                cd /data/projects/terraform/libvirt
+                cd terraform-file/
                 terraform plan -out createkvm
                 '''
             }
@@ -29,7 +28,7 @@ pipeline{
         stage('TF Apply'){
             steps{
                 sh '''
-                cd /data/projects/terraform/libvirt
+                cd terraform-file/
                 terraform apply createkvm
                 '''
             }
