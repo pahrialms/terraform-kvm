@@ -1,5 +1,5 @@
 pipeline{
-    agent {label 'master'}
+    agent {label 'sokong-lab'}
     stages{
         stage('TF Init'){
             steps{
